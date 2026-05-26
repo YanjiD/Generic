@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuroraDrive Technologies Co., Ltd.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0b1d3a;
+      --navy-mid: #122a4e;
+      --steel: #3a5a8c;
+      --accent: #2e8bff;
+      --accent-soft: #e8f1ff;
+      --light: #f4f7fb;
+      --white: #ffffff;
+      --text: #1a2a3a;
+      --text-secondary: #5a6d82;
+      --border: #d8e2ee;
+      --radius: 6px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 80px 32px 72px;
+      color: var(--white);
+      text-align: center;
+    }
+    .hero-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(46, 139, 255, 0.15);
+      border: 1px solid rgba(46, 139, 255, 0.3);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+    .hero .slogan {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffd54f;
+      margin-bottom: 20px;
+      font-style: italic;
+      letter-spacing: -0.3px;
+    }
+    .hero p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+    .section + .section { padding-top: 0; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+    .section p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.75;
+    }
+
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ── CARDS ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+    }
+    .card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ── LIST ITEMS ── */
+    .item-list {
+      margin-top: 20px;
+      list-style: none;
+    }
+    .item-list li {
+      position: relative;
+      padding: 10px 0 10px 20px;
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .item-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── HIGHLIGHT ── */
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .item-list--tight { margin-top: 10px; }
+    .item-list--tight li { padding: 4px 0 4px 20px; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .divider hr {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── CONTACT / CTA ── */
+    .cta-section {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 56px 32px;
+      text-align: center;
+    }
+    .cta-inner h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .cta-inner p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 24px;
+      line-height: 1.75;
+    }
+    .contact-email {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: -0.2px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .footer-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">Aurora<span>Drive</span> Technologies</div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#development">Development</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="slogan">New Product Design<br/>&amp; Development</p>
+      <div class="hero-badge">Vehicle Interior Systems Supplier</div>
+      <h1>AuroraDrive Technologies Co., Ltd.</h1>
+      <p>Designing and developing customized vehicle interior components for new vehicle programs.</p>
+    </div>
+  </header>
+
+  <!-- COMPANY OVERVIEW -->
+  <section class="section" id="overview">
+    <div class="section-label">Company Overview</div>
+    <h2>About AuroraDrive Technologies</h2>
+    <p>AuroraDrive Technologies Co., Ltd. is a supplier specializing in new product design and development for vehicle interior systems. The company works with customers to understand product requirements, evaluate design options, and support the development of customized components for new vehicle programs.</p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- PRODUCT DESIGN AND DEVELOPMENT -->
+  <section class="section" id="development">
+    <div class="section-label">Product Design and Development</div>
+    <h2>From Concept to Validated Design</h2>
+    <p>Our team manages the full design and development cycle for vehicle interior components, translating customer requirements into manufacturable designs. Each program moves through structured stages of concept definition, detailed design, prototyping, and validation, with regular reviews to confirm that solutions meet technical, packaging, and cost targets.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Concept Definition</h3>
+        <p>We work from customer requirements to define product concepts and evaluate feasible design directions.</p>
+      </div>
+      <div class="card">
+        <h3>Detailed Design</h3>
+        <p>Selected concepts are developed into detailed component designs prepared for prototyping and tooling.</p>
+      </div>
+      <div class="card">
+        <h3>Prototyping</h3>
+        <p>Prototypes are built to assess fit, packaging, and performance ahead of production commitment.</p>
+      </div>
+      <div class="card">
+        <h3>Design Validation</h3>
+        <p>Designs are reviewed and tested against program targets to confirm readiness for development.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- CUSTOMER COLLABORATION -->
+  <section class="section" id="collaboration">
+    <div class="section-label">Customer Collaboration</div>
+    <h2>Working Closely with Customers</h2>
+    <p>We work closely with customers throughout each program, aligning on requirements early and maintaining regular communication as designs evolve. Collaborative reviews help confirm that proposed solutions meet packaging, performance, and cost expectations before development proceeds, so that decisions are made together with each customer's engineering and program teams.</p>
+  </section>
+
+  <div class="divider"><hr /></div>
+
+  <!-- ENGINEERING AND PROGRAM SUPPORT -->
+  <section class="section" id="support">
+    <div class="section-label">Engineering and Program Support</div>
+    <h2>Support Across the Program Timeline</h2>
+    <p>Our engineering team supports customers across the development timeline, coordinating design updates, documentation, and change management. We align our activities with each vehicle program's milestones and provide continuity through the following phases:</p>
+    <ul class="item-list">
+      <li>Requirements alignment and design coordination</li>
+      <li>Documentation and engineering change management</li>
+      <li>Sourcing, tooling, and pre-production support</li>
+      <li>Program milestone and schedule alignment</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT INFORMATION -->
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <h2>Contact Information</h2>
+      <p>To discuss a new vehicle program or request more information about our design and development capabilities, please contact us to arrange an initial conversation.</p>
+      <p class="contact-email">contact@auroradrive.com</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">AuroraDrive Technologies Co., Ltd.</div>
+    <div>&copy; 2025 AuroraDrive Technologies. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
