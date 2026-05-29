@@ -69,14 +69,28 @@
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 80px 32px 72px;
+      position: relative;
+      background-image: url('car.png');
+      background-size: cover;
+      background-position: center;
+      padding: 32px 0;
       color: var(--white);
       text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(8, 16, 32, 0.55) 0%, rgba(8, 16, 32, 0.6) 100%);
+      z-index: 0;
     }
     .hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 720px;
       margin: 0 auto;
+      padding: 0 32px;
     }
     .hero-badge {
       display: inline-block;
@@ -100,12 +114,13 @@
       letter-spacing: -0.3px;
     }
     .hero .slogan {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 700;
       color: #ffd54f;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       font-style: italic;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.4px;
+      line-height: 1.15;
     }
     .hero p {
       font-size: 15px;
@@ -144,12 +159,14 @@
       max-width: 680px;
       line-height: 1.75;
     }
+    /* Core Product intro — centered, tightened around hero and next section */
+    #product { text-align: center; padding-top: 32px; padding-bottom: 28px; }
 
     /* ── TWO-COL ── */
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 112px;
       align-items: start;
     }
 
@@ -230,7 +247,7 @@
     .cta-inner {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 56px 32px;
+      padding: 36px 32px;
       text-align: center;
     }
     .cta-inner h2 {
@@ -290,8 +307,8 @@
     <div class="nav-inner">
       <div class="logo">Aurora<span>Drive</span> Technologies</div>
       <div class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#development">Development</a>
+        <a href="#product">Product</a>
+        <a href="#approach">Our Approach</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -300,76 +317,39 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-inner">
-      <p class="slogan">New Product Design<br/>&amp; Development</p>
-      <div class="hero-badge">Vehicle Interior Systems Supplier</div>
       <h1>AuroraDrive Technologies Co., Ltd.</h1>
-      <p>Designing and developing customized vehicle interior components for new vehicle programs.</p>
+      <p>Developing vehicle interior system components for next-generation vehicle programs.</p>
     </div>
   </header>
 
-  <!-- COMPANY OVERVIEW -->
-  <section class="section" id="overview">
-    <div class="section-label">Company Overview</div>
-    <h2>About AuroraDrive Technologies</h2>
-    <p>AuroraDrive Technologies Co., Ltd. is a supplier specializing in new product design and development for vehicle interior systems. The company works with customers to understand product requirements, evaluate design options, and support the development of customized components for new vehicle programs.</p>
+  <!-- PRODUCT -->
+  <section class="section" id="product">
+    <div class="section-label">Core Product</div>
+    <h2>Active Cabin Comfort Module (ACCM)</h2>
   </section>
 
-  <div class="divider"><hr /></div>
-
-  <!-- PRODUCT DESIGN AND DEVELOPMENT -->
-  <section class="section" id="development">
-    <div class="section-label">Product Design and Development</div>
-    <h2>From Concept to Validated Design</h2>
-    <p>Our team manages the full design and development cycle for vehicle interior components, translating customer requirements into manufacturable designs. Each program moves through structured stages of concept definition, detailed design, prototyping, and validation, with regular reviews to confirm that solutions meet technical, packaging, and cost targets.</p>
-    <div class="card-grid">
-      <div class="card">
-        <h3>Concept Definition</h3>
-        <p>We work from customer requirements to define product concepts and evaluate feasible design directions.</p>
+  <!-- PRODUCT OBJECTIVE + DESIGN DECISION APPROACH (side by side) -->
+  <section class="section" id="approach">
+    <div class="two-col">
+      <div>
+        <div class="section-label">Product Objective</div>
+        <h2>Designed for Vehicle Interior Applications</h2>
+        <p>Our Active Cabin Comfort Module is developed to support vehicle manufacturers across varied operating conditions and program requirements. The module is designed to coordinate interior system functions while maintaining consistency, reliability, and readiness for vehicle development timelines.</p>
       </div>
-      <div class="card">
-        <h3>Detailed Design</h3>
-        <p>Selected concepts are developed into detailed component designs prepared for prototyping and tooling.</p>
-      </div>
-      <div class="card">
-        <h3>Prototyping</h3>
-        <p>Prototypes are built to assess fit, packaging, and performance ahead of production commitment.</p>
-      </div>
-      <div class="card">
-        <h3>Design Validation</h3>
-        <p>Designs are reviewed and tested against program targets to confirm readiness for development.</p>
+      <div>
+        <div class="section-label">Design Decision Approach</div>
+        <h2>Structured New Product Development Process</h2>
+        <p>Our new product development process combines customer requirements, engineering analysis, design reviews, and validation activities to support product design decisions. The development team evaluates design alternatives against program targets and coordinates updates through each stage of the vehicle development timeline.</p>
       </div>
     </div>
   </section>
 
-  <div class="divider"><hr /></div>
 
-  <!-- CUSTOMER COLLABORATION -->
-  <section class="section" id="collaboration">
-    <div class="section-label">Customer Collaboration</div>
-    <h2>Working Closely with Customers</h2>
-    <p>We work closely with customers throughout each program, aligning on requirements early and maintaining regular communication as designs evolve. Collaborative reviews help confirm that proposed solutions meet packaging, performance, and cost expectations before development proceeds, so that decisions are made together with each customer's engineering and program teams.</p>
-  </section>
-
-  <div class="divider"><hr /></div>
-
-  <!-- ENGINEERING AND PROGRAM SUPPORT -->
-  <section class="section" id="support">
-    <div class="section-label">Engineering and Program Support</div>
-    <h2>Support Across the Program Timeline</h2>
-    <p>Our engineering team supports customers across the development timeline, coordinating design updates, documentation, and change management. We align our activities with each vehicle program's milestones and provide continuity through the following phases:</p>
-    <ul class="item-list">
-      <li>Requirements alignment and design coordination</li>
-      <li>Documentation and engineering change management</li>
-      <li>Sourcing, tooling, and pre-production support</li>
-      <li>Program milestone and schedule alignment</li>
-    </ul>
-  </section>
-
-  <!-- CONTACT INFORMATION -->
+  <!-- CTA -->
   <section class="cta-section" id="contact">
     <div class="cta-inner">
-      <h2>Contact Information</h2>
-      <p>To discuss a new vehicle program or request more information about our design and development capabilities, please contact us to arrange an initial conversation.</p>
+      <h2>Next Steps</h2>
+      <p>Contact us to arrange a technical discussion. We can then proceed with NDA execution and the next phase of evaluation as needed.</p>
       <p class="contact-email">contact@auroradrive.com</p>
     </div>
   </section>
